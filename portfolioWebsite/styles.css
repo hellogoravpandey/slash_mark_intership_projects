@@ -1,0 +1,265 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: black;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Background Styling */
+.background {
+    position: relative;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Black with transparency */
+    overflow: hidden;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Black with transparency */
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.menu-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.menu-button span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: white;
+}
+
+.menu {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, right 0.3s ease;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+/* Show menu when checkbox is checked */
+.menu-toggle:checked ~ .menu {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Intro Section Styling */
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* Black with transparency */
+    border-radius: 8px;
+    margin: 20px;
+    animation: fadeIn 2s ease-out; /* Animation */
+}
+
+.intro-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.intro-content h1 {
+    margin: 0 0 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    animation: slideInLeft 1s ease-out;
+}
+
+.intro-content p {
+    font-size: 1.2em;
+}
+
+.intro-photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-photo img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    border: 5px solid white;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Projects Section Styling */
+.projects {
+    background: rgba(0, 0, 0, 0.8); /* Black with transparency */
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.projects h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-item {
+    background-color: #333;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.project-item h3 {
+    margin: 0 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.project-item p {
+    margin: 0;
+    color: #bbb;
+}
+
+/* Contact Section Styling */
+.contact {
+    background: rgba(0, 0, 0, 0.8); /* Black with transparency */
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+    color: white;
+}
+
+.contact h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.contact ul li {
+    margin-bottom: 10px;
+}
+
+.contact ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.contact ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Media Queries */
+
+/* For tablets and larger mobile devices */
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        width: 100%;
+        top: 50px; /* Adjust for header height */
+    }
+}
